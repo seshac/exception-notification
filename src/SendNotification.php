@@ -89,12 +89,12 @@ class SendNotification
      * @return void
      */
     public function send() :void
-    {   
-
+    {
         $mail = Mail::to($this->toAddresses);
         
         if (! $this->queueOptions->enabled) {
             $mail->send($this->content);
+
             return;
         }
         

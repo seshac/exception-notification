@@ -50,7 +50,6 @@ class ExceptionNotificationTest extends TestCase
         Mail::assertSent(ExceptionMailer::class);
         
         config(['exception-notification.queueOptions.enabled' => true]);
-
     }
 
 
@@ -63,5 +62,4 @@ class ExceptionNotificationTest extends TestCase
 
         Mail::assertNotQueued(ExceptionMailer::class);
     }
-
 }
