@@ -1,0 +1,62 @@
+{
+    "name": "javelinorg/exception-notification",
+    "description": "The Exception Notification package provides a set of notifiers for sending notifications when exception occur in a Laravel application.",
+    "keywords": [
+        "Laravel",
+        "javelinorg",
+        "exception-notification"
+    ],
+    "homepage": "https://github.com/javelinorg/exception-notification",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Javelin",
+            "email": "contact@javelinagency.com",
+            "homepage": "https://javelinagency.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/console":"^6.0|^7.0",
+        "illuminate/support": "^6.0|^7.0",
+        "illuminate/mail": "^6.0|^7.0",
+        "illuminate/log": "^6.0|^7.0",
+        "symfony/error-handler": "^5.0",
+        "jaybizzle/crawler-detect": "^1.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "orchestra/testbench": "^4.0|^5.0",
+        "phpunit/phpunit": "^9.0",
+        "psalm/plugin-laravel": "^1.2",
+        "vimeo/psalm": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Javelin\\ExceptionNotification\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Javelin\\ExceptionNotification\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Javelin\\ExceptionNotification\\ExceptionNotificationServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
