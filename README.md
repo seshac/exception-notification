@@ -1,7 +1,7 @@
 # The Exception Notification package sends a mail notification when exception occurs in a Laravel application.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/javelinorg/exception-notification.svg?style=flat-square)](https://packagist.org/packages/javelinorg/exception-notification)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/javelinorg/exception-notification/run-tests?label=tests)](https://github.com/javelinorg/exception-notification/actions?query=workflow%3Arun-tests+branch%3Amaster)
+![Tests](https://github.com/javelinorg/exception-notification/workflows/Tests/badge.svg?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/javelinorg/exception-notification.svg?style=flat-square)](https://packagist.org/packages/javelinorg/exception-notification)
 
 ## Installation
