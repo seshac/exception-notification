@@ -1,6 +1,6 @@
 {
     "name": "javelinorg/exception-notification",
-    "description": "The Exception Notification package provides a set of notifiers for sending notifications when exception occur in a Laravel application.",
+    "description": "The Exception Notification package sends a mail notification when exception occurs in a Laravel application.",
     "keywords": [
         "Laravel",
         "javelinorg",

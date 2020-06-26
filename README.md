@@ -24,7 +24,8 @@ php artisan vendor:publish --provider="Javelin\ExceptionNotification\ExceptionNo
 
 This is the contents of the published config file:
 
-```php
+``` php
+
 return [
 
     /*
@@ -48,8 +49,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'bar@example.com'),
-        'name'    => env('MAIL_FROM_NAME', 'Hay Bar!'),
+        'address' => env('MAIL_FROM_ADDRESS', 'foo@example.com'),
+        'name'    => env('MAIL_FROM_NAME', 'Foo'),
     ],
 
     /*
@@ -62,7 +63,7 @@ return [
     */
 
     'toAddresses' => [
-        "foo@example.com"
+        "bar@example.com"
     ],
 
     /*
@@ -76,8 +77,8 @@ return [
     */
 
     'queueOptions' => [
-        'enabled' => env('EXCEPTION_NOTIFICATION_SHOULD_QUEUE', true),
-        'queue' => env('EXCEPTION_NOTIFICATION_QUEUE_NAME', "sesha"),
+        'enabled' => env('EXCEPTION_NOTIFICATION_SHOULD_QUEUE',true),
+        'queue' => env('EXCEPTION_NOTIFICATION_QUEUE_NAME', "default"),
         'connection' => env('QUEUE_DRIVER', 'redis'),
     ],
 
@@ -111,6 +112,8 @@ return [
        '*',
     ],
 ];
+
+
 ```
 
 ## Usage
