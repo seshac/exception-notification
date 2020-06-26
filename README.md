@@ -116,11 +116,16 @@ return [
 ## Usage
  Just add at report method in App/Exceptions/Handler file.
 ``` php
+
 public function report(Exception $exception) 
 {
-    app(ExceptionNotification::class)->reportException($exception);
-    parent::report($exception);
+   
+   app(ExceptionNotification::class)->reportException($exception);
+    
+   parent::report($exception);
+    
 }
+
 ```
 
 ## Testing
