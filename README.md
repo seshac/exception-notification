@@ -4,8 +4,6 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/javelinorg/exception-notification/run-tests?label=tests)](https://github.com/javelinorg/exception-notification/actions?query=workflow%3Arun-tests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/javelinorg/exception-notification.svg?style=flat-square)](https://packagist.org/packages/javelinorg/exception-notification)
 
-Description
-
 ## Installation
 
 You can install the package via composer:
@@ -118,12 +116,11 @@ return [
 ## Usage
  Just add at report method in App/Exceptions/Handler file.
 ``` php
-    public function report(Exception $exception) {
-  
+public function report(Exception $exception) 
+{
     app(ExceptionNotification::class)->reportException($exception);
-
     parent::report($exception);
-  }
+}
 ```
 
 ## Testing
