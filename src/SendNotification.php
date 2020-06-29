@@ -1,4 +1,5 @@
 <?php
+
 namespace Javelin\ExceptionNotification;
 
 use Illuminate\Support\Facades\Mail;
@@ -9,7 +10,6 @@ class SendNotification
 {
     use ExceptionContent;
 
-
     protected $exception;
 
     protected $subject;
@@ -17,13 +17,13 @@ class SendNotification
     protected $body;
 
     protected $content;
-    
+
     protected $toAddresses;
 
     protected $queueOptions;
 
     /**
-     * Create and send a exception mail
+     * Create and send a exception mail.
      */
     public function __construct()
     {
@@ -35,12 +35,13 @@ class SendNotification
     }
 
     /**
-     * Set exception
+     * Set exception.
      *
      * @param FlattenException $exception
+     *
      * @return object
      */
-    public function setException(FlattenException $exception) :object
+    public function setException(FlattenException $exception): object
     {
         $this->exception = $exception;
 
@@ -48,11 +49,11 @@ class SendNotification
     }
 
     /**
-     * Set the subject content
+     * Set the subject content.
      *
      * @return object
      */
-    public function setSubject() :object
+    public function setSubject(): object
     {
         $this->subject = $this->getSubject($this->exception);
 
@@ -60,11 +61,11 @@ class SendNotification
     }
 
     /**
-     * Set the body content
+     * Set the body content.
      *
      * @return object
      */
-    public function setBody() :object
+    public function setBody(): object
     {
         $this->body = $this->getBody($this->exception);
 
@@ -72,11 +73,11 @@ class SendNotification
     }
 
     /**
-     * Set the mailable notificaton content
+     * Set the mailable notificaton content.
      *
      * @return object
      */
-    public function setMailableContent() :object
+    public function setMailableContent(): object
     {
         $this->content = (new ExceptionMailer($this->subject, $this->body));
 
@@ -84,20 +85,20 @@ class SendNotification
     }
 
     /**
-     * Send the notification
+     * Send the notification.
      *
      * @return void
      */
-    public function send() :void
+    public function send(): void
     {
         $mail = Mail::to($this->toAddresses);
-        
-        if (! $this->queueOptions->enabled) {
+
+        if (!$this->queueOptions->enabled) {
             $mail->send($this->content);
 
             return;
         }
-        
+
         $message = $this->content->onConnection($this->queueOptions->connection);
 
         if ($this->queueOptions->queue !== 'default') {

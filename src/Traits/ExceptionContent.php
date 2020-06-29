@@ -1,4 +1,5 @@
 <?php
+
 namespace Javelin\ExceptionNotification\Traits;
 
 use Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer;
@@ -6,12 +7,13 @@ use Symfony\Component\ErrorHandler\Exception\FlattenException;
 
 trait ExceptionContent
 {
-
     /**
-    * Gets the message associated with the given exception.
-    * @param  FlattenException $exception
-    * @return mixed
-    */
+     * Gets the message associated with the given exception.
+     *
+     * @param FlattenException $exception
+     *
+     * @return mixed
+     */
     protected function getSubject(FlattenException $exception)
     {
         $message = $this->escape($exception->getMessage());
@@ -21,7 +23,9 @@ trait ExceptionContent
 
     /**
      * Gets the content associated with the given exception.
-     * @param  FlattenException $exception
+     *
+     * @param FlattenException $exception
+     *
      * @return mixed
      */
     protected function getBody(FlattenException $exception)
@@ -38,11 +42,12 @@ trait ExceptionContent
     }
 
     /**
-    * Convert special characters to HTML entities
-    *
-    * @param string $string
-    * @return string
-    */
+     * Convert special characters to HTML entities.
+     *
+     * @param string $string
+     *
+     * @return string
+     */
     protected function escape(string $string): string
     {
         return htmlspecialchars($string, ENT_COMPAT | ENT_SUBSTITUTE, 'UTF-8');
