@@ -20,7 +20,6 @@ class ExceptionNotificationTestCommand extends Command
      *
      * @var string
      */
-
     protected $description = 'Check if Exception is working.';
 
     /**
